@@ -48,7 +48,8 @@ class APICaller(object):
                 self.key_file,
                 scopes=self.scopes
             ).authorize(httplib2.Http()),
-            discoveryServiceUrl=self.discovery_uri
+            discoveryServiceUrl=self.discovery_uri,
+            cache_discovery=False
         )
 
     def get_report(self, request_body={}):
